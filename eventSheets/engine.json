@@ -1,0 +1,508 @@
+{
+	"name": "engine",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "direction",
+			"type": "string",
+			"initialValue": "l",
+			"comment": "l = left, r = right",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 299844896264577
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 444517602767887
+				}
+			],
+			"actions": [
+				{
+					"id": "set-cursor-from-sprite",
+					"objectClass": "Mouse",
+					"sid": 646283882237219,
+					"parameters": {
+						"sprite": "cursor"
+					}
+				},
+				{
+					"id": "set-position-to-another-object",
+					"objectClass": "moveTo",
+					"sid": 545568439174358,
+					"parameters": {
+						"object": "player",
+						"image-point-optional": "0"
+					}
+				}
+			],
+			"sid": 859436441613382
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-click",
+					"objectClass": "Mouse",
+					"sid": 221313158085409,
+					"parameters": {
+						"mouse-button": "left",
+						"click-type": "clicked"
+					}
+				},
+				{
+					"id": "cursor-is-over-object",
+					"objectClass": "Mouse",
+					"sid": 114496017154122,
+					"parameters": {
+						"object": "walkable"
+					}
+				},
+				{
+					"id": "cursor-is-over-object",
+					"objectClass": "Mouse",
+					"sid": 377722146250673,
+					"parameters": {
+						"object": "poster"
+					},
+					"isInverted": true
+				}
+			],
+			"actions": [
+				{
+					"id": "set-position",
+					"objectClass": "moveTo",
+					"sid": 890149487439803,
+					"parameters": {
+						"x": "Mouse.X",
+						"y": "Mouse.Y"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "moveTo",
+					"sid": 731209328897311,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "move-to-top",
+					"objectClass": "player",
+					"sid": 746938679017328
+				},
+				{
+					"id": "find-path",
+					"objectClass": "player",
+					"sid": 195443271141226,
+					"behaviorType": "Pathfinding",
+					"parameters": {
+						"x": "moveTo.X",
+						"y": "player.Y"
+					}
+				}
+			],
+			"sid": 530614877694240,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 965614577674558,
+							"parameters": {
+								"first-value": "moveTo.X",
+								"comparison": 4,
+								"second-value": "player.X"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 804971199204532,
+							"parameters": {
+								"variable": "direction",
+								"value": "\"r\""
+							}
+						}
+					],
+					"sid": 512598717676497
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 769387332362206
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 729670019548537,
+							"parameters": {
+								"variable": "direction",
+								"value": "\"l\""
+							}
+						}
+					],
+					"sid": 818165678038430
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-path-found",
+					"objectClass": "player",
+					"sid": 873280090374305,
+					"behaviorType": "Pathfinding"
+				}
+			],
+			"actions": [
+				{
+					"id": "move-along-path",
+					"objectClass": "player",
+					"sid": 163129809389636,
+					"behaviorType": "Pathfinding"
+				}
+			],
+			"sid": 628215572452712
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-moving-along-path",
+					"objectClass": "player",
+					"sid": 120612461055543,
+					"behaviorType": "Pathfinding"
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation-speed",
+					"objectClass": "shoes",
+					"sid": 857190272441277,
+					"parameters": {
+						"speed": "12"
+					}
+				},
+				{
+					"id": "set-x",
+					"objectClass": "shoes",
+					"sid": 787655682146761,
+					"parameters": {
+						"x": "player.X"
+					}
+				}
+			],
+			"sid": 815766848550688,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 338014429198412,
+							"parameters": {
+								"first-value": "direction",
+								"comparison": 0,
+								"second-value": "\"r\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-mirrored",
+							"objectClass": "shoes",
+							"sid": 450577062401837,
+							"parameters": {
+								"state": "not-mirrored"
+							}
+						},
+						{
+							"id": "set-mirrored",
+							"objectClass": "player",
+							"sid": 193858427876100,
+							"parameters": {
+								"state": "not-mirrored"
+							}
+						}
+					],
+					"sid": 977556532968320
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 617932251416733
+						}
+					],
+					"actions": [
+						{
+							"id": "set-mirrored",
+							"objectClass": "shoes",
+							"sid": 692224139393180,
+							"parameters": {
+								"state": "mirrored"
+							}
+						},
+						{
+							"id": "set-mirrored",
+							"objectClass": "player",
+							"sid": 838177221424702,
+							"parameters": {
+								"state": "mirrored"
+							}
+						}
+					],
+					"sid": 341713003329097
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "else",
+					"objectClass": "System",
+					"sid": 655491981501545
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation-speed",
+					"objectClass": "shoes",
+					"sid": 306551284389077,
+					"parameters": {
+						"speed": "0"
+					}
+				}
+			],
+			"sid": 392285270234068
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "cursor-is-over-object",
+					"objectClass": "Mouse",
+					"sid": 547227862331464,
+					"parameters": {
+						"object": "poster"
+					}
+				},
+				{
+					"id": "is-boolean-instance-variable-set",
+					"objectClass": "poster",
+					"sid": 877587892083808,
+					"parameters": {
+						"instance-variable": "isZoomed"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation-frame",
+					"objectClass": "cursor",
+					"sid": 667741613572965,
+					"parameters": {
+						"frame-number": "2"
+					}
+				}
+			],
+			"sid": 415585830941471
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "else",
+					"objectClass": "System",
+					"sid": 480501000959713
+				},
+				{
+					"id": "cursor-is-over-object",
+					"objectClass": "Mouse",
+					"sid": 128477067760037,
+					"parameters": {
+						"object": "poster"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation-frame",
+					"objectClass": "cursor",
+					"sid": 636028332063887,
+					"parameters": {
+						"frame-number": "1"
+					}
+				}
+			],
+			"sid": 578931739758592
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "else",
+					"objectClass": "System",
+					"sid": 315241850745929
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation-frame",
+					"objectClass": "cursor",
+					"sid": 182695490503244,
+					"parameters": {
+						"frame-number": "0"
+					}
+				}
+			],
+			"sid": 201145364934311
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 629325919162644
+				}
+			],
+			"actions": [
+				{
+					"id": "set-position",
+					"objectClass": "cursor",
+					"sid": 321864569627040,
+					"parameters": {
+						"x": "Mouse.X",
+						"y": "Mouse.Y"
+					}
+				}
+			],
+			"sid": 502977424119072
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-object-clicked",
+					"objectClass": "Mouse",
+					"sid": 740530522177793,
+					"parameters": {
+						"mouse-button": "left",
+						"click-type": "clicked",
+						"object-clicked": "poster"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 287889037422761,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "poster",
+							"sid": 263931129690316,
+							"parameters": {
+								"instance-variable": "isZoomed"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-scale",
+							"objectClass": "poster",
+							"sid": 655768395382063,
+							"parameters": {
+								"scale": "0.2"
+							}
+						},
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "poster",
+							"sid": 473914785107808,
+							"parameters": {
+								"instance-variable": "isZoomed",
+								"value": "true"
+							}
+						}
+					],
+					"sid": 901769108959059
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 883737016150405
+						}
+					],
+					"actions": [
+						{
+							"id": "set-scale",
+							"objectClass": "poster",
+							"sid": 161445857524125,
+							"parameters": {
+								"scale": "0.11"
+							}
+						},
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "poster",
+							"sid": 735033719113488,
+							"parameters": {
+								"instance-variable": "isZoomed",
+								"value": "false"
+							}
+						}
+					],
+					"sid": 388956117825754
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-arrived",
+					"objectClass": "player",
+					"sid": 389136850657339,
+					"behaviorType": "Pathfinding"
+				}
+			],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "moveTo",
+					"sid": 965438085058045,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				}
+			],
+			"sid": 306268017209356
+		}
+	],
+	"sid": 211069362004930
+}

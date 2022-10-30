@@ -1,0 +1,205 @@
+{
+	"name": "shoes",
+	"plugin-id": "Sprite",
+	"sid": 547549384148977,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 405,
+						"height": 117,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 4396800,
+						"collisionPoly": {
+							"points": [
+								0.0024691358024691358,
+								0,
+								1,
+								0,
+								1,
+								0.9914529914529915,
+								0.0024691358024691358,
+								0.9914529914529915
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 309,
+						"height": 203,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 6158719,
+						"collisionPoly": {
+							"points": [
+								0,
+								0,
+								1,
+								0,
+								1,
+								0.9950738916256158,
+								0,
+								0.9950738916256158
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 183,
+						"height": 214,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 2264710,
+						"collisionPoly": {
+							"points": [
+								0,
+								0.004672897196261682,
+								1,
+								0.004672897196261682,
+								1,
+								0.9953271028037384,
+								0,
+								0.9953271028037384
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 340,
+						"height": 163,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 1747283,
+						"collisionPoly": {
+							"points": [
+								0,
+								0,
+								1,
+								0,
+								1,
+								0.9938650306748467,
+								0,
+								0.9938650306748467
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 421,
+						"height": 126,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 6283862,
+						"collisionPoly": {
+							"points": [
+								0,
+								0,
+								1,
+								0,
+								1,
+								0.9920634920634921,
+								0,
+								0.9920634920634921
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 308,
+						"height": 187,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 2556618,
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 187,
+						"height": 198,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 6329647,
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 344,
+						"height": 147,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 7450662,
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 425,
+						"height": 126,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 6161822,
+						"collisionPoly": {
+							"points": [
+								0,
+								0,
+								0.9976470588235294,
+								0,
+								0.9976470588235294,
+								0.9920634920634921,
+								0,
+								0.9920634920634921
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 967305951094024,
+				"name": "Default",
+				"isLooping": true,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 6
+			}
+		],
+		"subfolders": []
+	}
+}
