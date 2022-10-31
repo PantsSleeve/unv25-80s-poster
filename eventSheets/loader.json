@@ -1,0 +1,54 @@
+{
+	"name": "loader",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 732386393324432
+				}
+			],
+			"actions": [
+				{
+					"id": "start-fade",
+					"objectClass": "Untitled_Artwork",
+					"sid": 453497785283109,
+					"behaviorType": "Fade"
+				}
+			],
+			"sid": 399382069913607
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-loader-layout-complete",
+					"objectClass": "System",
+					"sid": 427190089356325
+				}
+			],
+			"actions": [
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 129323142774316,
+					"parameters": {
+						"seconds": "2"
+					}
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 392699724254572,
+					"parameters": {
+						"layout": "gallery"
+					}
+				}
+			],
+			"sid": 547397912456221
+		}
+	],
+	"sid": 487319718591285
+}

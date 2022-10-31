@@ -39,6 +39,30 @@
 			"bundled": false
 		},
 		{
+			"type": "plugin",
+			"id": "Spritefont2",
+			"name": "Sprite font",
+			"author": "Scirra",
+			"version": "r308.2",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Text",
+			"name": "Text",
+			"author": "Scirra",
+			"version": "r308.2",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Audio",
+			"name": "Audio",
+			"author": "Scirra",
+			"version": "r308.2",
+			"bundled": false
+		},
+		{
 			"type": "behavior",
 			"id": "Sin",
 			"name": "Sine",
@@ -61,6 +85,22 @@
 			"author": "Scirra",
 			"version": "r308.2",
 			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Tween",
+			"name": "Tween",
+			"author": "Scirra",
+			"version": "r308.2",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Fade",
+			"name": "Fade",
+			"author": "Scirra",
+			"version": "r308.2",
+			"bundled": false
 		}
 	],
 	"uniqueId": "vfs0mz2c4pe",
@@ -76,7 +116,13 @@
 			"poster",
 			"openDoor",
 			"shoes",
-			"cursor"
+			"cursor",
+			"Untitled_Artwork",
+			"SpriteFont",
+			"Text",
+			"TiledBackground",
+			"things",
+			"Audio"
 		],
 		"subfolders": []
 	},
@@ -88,13 +134,15 @@
 	},
 	"layouts": {
 		"items": [
-			"Layout 1"
+			"gallery",
+			"loader"
 		],
 		"subfolders": []
 	},
 	"eventSheets": {
 		"items": [
-			"engine"
+			"engine",
+			"loader"
 		],
 		"subfolders": []
 	},
@@ -104,7 +152,16 @@
 			"subfolders": []
 		},
 		"sound": {
-			"items": [],
+			"items": [
+				{
+					"name": "foot-steps.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 122985882175012,
+					"file-info": {
+						"purpose": "none"
+					}
+				}
+			],
 			"subfolders": []
 		},
 		"music": {
@@ -112,11 +169,29 @@
 			"subfolders": []
 		},
 		"video": {
-			"items": [],
+			"items": [
+				{
+					"name": "jordi.webm",
+					"type": "video/webm",
+					"sid": 844092219481170,
+					"file-info": {
+						"purpose": "none"
+					}
+				}
+			],
 			"subfolders": []
 		},
 		"font": {
-			"items": [],
+			"items": [
+				{
+					"name": "Monoton-Regular.ttf",
+					"type": "application/font-sfnt",
+					"sid": 573376396879736,
+					"file-info": {
+						"purpose": "none"
+					}
+				}
+			],
 			"subfolders": []
 		},
 		"icon": {
@@ -206,7 +281,7 @@
 		"pixelRounding": false,
 		"zAxisScale": "normalized",
 		"fov": 0.7853981633974483,
-		"useLoaderLayout": false,
+		"useLoaderLayout": true,
 		"fullscreenMode": "scale-outer",
 		"fullscreenQuality": "high",
 		"viewportFit": "auto",
@@ -240,7 +315,7 @@
 		"renderingMode": "auto",
 		"anisotropicFiltering": "auto",
 		"maxSpriteSheetSize": 2048,
-		"loaderStyle": "splash",
+		"loaderStyle": "percent",
 		"preloadSounds": true,
 		"cordovaiOSScheme": "app",
 		"cordovaAndroidScheme": "https",
@@ -248,5 +323,5 @@
 	},
 	"viewportWidth": 854,
 	"viewportHeight": 480,
-	"firstLayout": null
+	"firstLayout": "loader"
 }

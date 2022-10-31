@@ -22,6 +22,17 @@
 			],
 			"actions": [
 				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 383016303751717,
+					"parameters": {
+						"audio-file": "foot-steps",
+						"loop": "looping",
+						"volume": "-10",
+						"tag-optional": "\"walking\""
+					}
+				},
+				{
 					"id": "set-cursor-from-sprite",
 					"objectClass": "Mouse",
 					"sid": 646283882237219,
@@ -36,6 +47,24 @@
 					"parameters": {
 						"object": "player",
 						"image-point-optional": "0"
+					}
+				},
+				{
+					"id": "set-source",
+					"objectClass": "Video",
+					"sid": 459214014464423,
+					"parameters": {
+						"webm-source": "\"jordi.webm\"",
+						"ogg-theora-source": "\"\"",
+						"h264-source": "\"\""
+					}
+				},
+				{
+					"id": "set-looping",
+					"objectClass": "Video",
+					"sid": 675646364497998,
+					"parameters": {
+						"mode": "looping"
 					}
 				}
 			],
@@ -192,9 +221,9 @@
 				{
 					"id": "set-animation-speed",
 					"objectClass": "shoes",
-					"sid": 857190272441277,
+					"sid": 326272617802894,
 					"parameters": {
-						"speed": "12"
+						"speed": "8"
 					}
 				},
 				{
@@ -203,6 +232,15 @@
 					"sid": 787655682146761,
 					"parameters": {
 						"x": "player.X"
+					}
+				},
+				{
+					"id": "set-paused",
+					"objectClass": "Audio",
+					"sid": 839957398765748,
+					"parameters": {
+						"tag": "\"walking\"",
+						"state": "resume"
 					}
 				}
 			],
@@ -430,20 +468,34 @@
 					],
 					"actions": [
 						{
-							"id": "set-scale",
-							"objectClass": "poster",
-							"sid": 655768395382063,
-							"parameters": {
-								"scale": "0.2"
-							}
-						},
-						{
 							"id": "set-boolean-instvar",
 							"objectClass": "poster",
 							"sid": 473914785107808,
 							"parameters": {
 								"instance-variable": "isZoomed",
 								"value": "true"
+							}
+						},
+						{
+							"id": "move-to-top",
+							"objectClass": "poster",
+							"sid": 214271078591605
+						},
+						{
+							"id": "tween-two-properties",
+							"objectClass": "poster",
+							"sid": 385796023230555,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "scale",
+								"end-x": "0.2",
+								"end-y": "0.2",
+								"time": "1",
+								"ease": "easeoutelastic",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no"
 							}
 						}
 					],
@@ -460,11 +512,20 @@
 					],
 					"actions": [
 						{
-							"id": "set-scale",
+							"id": "tween-two-properties",
 							"objectClass": "poster",
-							"sid": 161445857524125,
+							"sid": 187601730667886,
+							"behaviorType": "Tween",
 							"parameters": {
-								"scale": "0.11"
+								"tags": "\"\"",
+								"property": "scale",
+								"end-x": "0.11",
+								"end-y": "0.11",
+								"time": "0.7",
+								"ease": "easeoutelastic",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no"
 							}
 						},
 						{
@@ -492,6 +553,15 @@
 				}
 			],
 			"actions": [
+				{
+					"id": "set-paused",
+					"objectClass": "Audio",
+					"sid": 235187221108496,
+					"parameters": {
+						"tag": "\"walking\"",
+						"state": "pause"
+					}
+				},
 				{
 					"id": "set-visible",
 					"objectClass": "moveTo",
